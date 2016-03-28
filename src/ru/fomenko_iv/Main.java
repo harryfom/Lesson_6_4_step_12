@@ -39,12 +39,11 @@ public class Main {
             BiConsumer<? super T, ? super T> minMaxConsumer) {
 
         Object[] arr = new Object[2];
-        long i = stream.peek(n -> {
+        stream.forEach(n -> {
 //            System.out.println(n);
             arr[0] = order.compare(arr[0] == null ? n : (T) arr[0], n) < 0 ? arr[0] : n;
             arr[1] = order.compare(arr[1] == null ? n : (T) arr[1], n) > 0 ? arr[1] : n;
-        })
-                .count();
+        });
 //        System.out.println("count=" + i);
         minMaxConsumer.accept((T) arr[0], (T) arr[1]);
     }
