@@ -3,9 +3,7 @@ package ru.fomenko_iv;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Optional;
 import java.util.function.BiConsumer;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /*
@@ -22,8 +20,8 @@ minMaxConsumer.accept(null, null);
 public class Main {
     public static void main(String[] args) {
         System.out.println("6.4 Stream API – Шаг 12");
-//        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(new Integer[]{1,2,3,4,5,6,7}));
-        ArrayList<Integer> arrayList = new ArrayList<>();
+        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(new Integer[]{1,2,3,4,5,6,7}));
+//        ArrayList<Integer> arrayList = new ArrayList<>();
         Stream integerStream = arrayList.stream();
         findMinMax(integerStream, new IntComparator(), new BiConsumer<Integer, Integer>() {
             @Override
